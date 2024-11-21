@@ -11,7 +11,7 @@ export default function Navbar() {
         <div className="flex justify-between h-16">
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="text-2xl font-bold text-primary">
-              CloudTech
+              QuantumFlow
             </Link>
           </div>
           
@@ -45,21 +45,28 @@ export default function Navbar() {
               className="block px-3 py-2 text-gray-700 hover:text-primary"
               onClick={() => setIsOpen(false)}
             >
-              Home
+              Dashboard
             </Link>
             <Link
-              to="/about"
+              to="/analytics"
               className="block px-3 py-2 text-gray-700 hover:text-primary"
               onClick={() => setIsOpen(false)}
             >
-              About
+              Analytics
             </Link>
             <Link
-              to="/contact"
+              to="/support"
               className="block px-3 py-2 text-gray-700 hover:text-primary"
               onClick={() => setIsOpen(false)}
             >
-              Contact
+              Support
+            </Link>
+            <Link
+              to="/settings"
+              className="block px-3 py-2 text-gray-700 hover:text-primary"
+              onClick={() => setIsOpen(false)}
+            >
+              Settings
             </Link>
           </div>
         </div>

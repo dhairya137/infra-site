@@ -1,13 +1,7 @@
 import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
 import ParticleBackground from '../components/ParticleBackground'
 
 export default function Home() {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  });
-
   const features = [
     {
       title: "AI-Powered Infrastructure",
@@ -90,9 +84,8 @@ export default function Home() {
       <section className="relative z-10 bg-white/80 backdrop-blur-md py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            ref={ref}
             initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-3xl font-bold text-center mb-12">Our AI & DevOps Features</h2>
@@ -101,7 +94,7 @@ export default function Home() {
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
-                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.2 }}
                   className="p-6 rounded-xl bg-white shadow-xl hover:shadow-2xl transition-shadow"
                 >
@@ -120,7 +113,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-3xl font-bold text-center mb-12">Our Tech Stack</h2>
@@ -129,7 +122,7 @@ export default function Home() {
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
-                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.2 }}
                   className="p-6 rounded-xl bg-white/80 backdrop-blur-md shadow-xl"
                 >
@@ -154,7 +147,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center"
           >
@@ -169,7 +162,7 @@ export default function Home() {
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, scale: 0.5 }}
-                  animate={inView ? { opacity: 1, scale: 1 } : {}}
+                  animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="p-6 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-500 text-white"
                 >

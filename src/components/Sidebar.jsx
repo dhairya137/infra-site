@@ -1,21 +1,24 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { 
   HiHome, 
+  HiChartBar, 
   HiInformationCircle, 
   HiMail, 
-  HiChartBar, 
   HiCog, 
-  HiSupport 
+  HiSupport,
+  HiDocumentReport
 } from 'react-icons/hi'
 
 export default function Sidebar() {
+  const location = useLocation();
+  
   const menuItems = [
     { icon: HiHome, text: 'Dashboard', path: '/' },
     { icon: HiChartBar, text: 'Analytics', path: '/analytics' },
     { icon: HiInformationCircle, text: 'About', path: '/about' },
     { icon: HiMail, text: 'Contact', path: '/contact' },
-    { icon: HiCog, text: 'Settings', path: '/settings' },
-    { icon: HiSupport, text: 'Support', path: '/support' }
+    { icon: HiSupport, text: 'Support', path: '/support' },
+    { icon: HiCog, text: 'Settings', path: '/settings' }
   ]
 
   return (
@@ -26,7 +29,11 @@ export default function Sidebar() {
             <li key={index}>
               <Link
                 to={item.path}
-                className="flex items-center space-x-3 text-gray-700 hover:text-primary hover:bg-gray-50 px-4 py-2 rounded-lg transition-colors"
+                className={`flex items-center space-x-3 px-4 py-2 rounded-lg transition-colors ${
+                  location.pathname === item.path
+                    ? 'bg-blue-600 text-white'
+                    : 'text-gray-700 hover:bg-gray-50'
+                }`}
               >
                 <item.icon className="w-5 h-5" />
                 <span>{item.text}</span>

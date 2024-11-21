@@ -5,6 +5,9 @@ import Footer from './components/Footer'
 import Home from './pages/Home'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import Analytics from './pages/Analytics'
+import Support from './pages/Support'
+import Settings from './pages/Settings'
 
 export default function App() {
   return (
@@ -17,6 +20,9 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/analytics" element={<Analytics />} />
+            <Route path="/support" element={<Support />} />
+            <Route path="/settings" element={<Settings />} />
           </Routes>
         </main>
       </div>
